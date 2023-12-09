@@ -9,7 +9,7 @@ app.post("/payment", async (req, res) => {
   try {
     const payment = new PaymentsModel(req.body);
     await payment.save();
-    res.status(201).send(payment);
+    res.status(202).send(payment);
   } catch (error) {
     res.status(400).send(error);
   }
