@@ -23,7 +23,7 @@ describe("Post", () => {
     console.log("Body:", res.body);
 
     expect(res).to.have.status(201);
-    expect(_.pick(res.body, paymentKeys)).to.deep.equal(null);
+    expect(_.pick(res.body, paymentKeys)).to.deep.equal(undefined);
   });
 });
 
