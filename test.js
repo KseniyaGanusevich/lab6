@@ -74,8 +74,9 @@ describe("Delete", () => {
   });
 
   it("Should delete payment by id", async () => {
-    const res = await chai.request(app);
-    .delete(`/payment/${createdPayment._id}`);
+    const res = await chai
+      .request(app)
+      .delete(`/payment/${createdPayment._id}`);
 
     expect(res.body).to.deep.equal(createdPayment);
   });
