@@ -23,7 +23,7 @@ describe("Post", () => {
     console.log("Body:", res.body);
 
     expect(res).to.have.status(201);
-    expect(_.pick(res.body, paymentKeys)).to.deep.equal(undefined);
+    expect(_.pick(res.body, paymentKeys)).to.deep.equal(payment);
   });
 });
 
@@ -75,7 +75,7 @@ describe("Delete", () => {
 
   it("Should delete payment by id", async () => {
     const res = await chai
-      .request(app);
+      .request(app)
       .delete(`/payment/${createdPayment._id}`);
 
     expect(res.body).to.deep.equal(createdPayment);
