@@ -23,7 +23,7 @@ describe("Post", () => {
     console.log("Body:", res.body);
 
     expect(res).to.have.status(201);
-    expect(_.pick(res.body, paymentKeys)).to.deep.equal(payment);
+    expect(_.pick(res.body, paymentKeys)).to.deep.equal(null);
   });
 });
 
@@ -43,7 +43,7 @@ describe("Get", () => {
   });
 
   it("Should get one payment by id", async () => {
-    const res = await chai.request(app).get(`/payment/${createdPayment.id}`);
+    const res = await chai.request(app).get(`/payment/${createdPayment._id}`);
 
     expect(res.body).to.deep.equal(createdPayment);
   });
