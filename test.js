@@ -43,7 +43,7 @@ describe("Get", () => {
   });
 
   it("Should get one payment by id", async () => {
-    const res = await chai.request(app).get(`/payment/${createdPayment._id}`);
+    const res = await chai.request(app).get(`/payment/${createdPayment.id}`);
 
     expect(res.body).to.deep.equal(createdPayment);
   });
